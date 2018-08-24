@@ -31,6 +31,7 @@ def apply_coupons(cart, coupons)
       cart["#{item[0]} W/COUPON"][:clearance] = cart[item[0]][:clearance]
       cart["#{item[0]} W/COUPON"][:price] = item[1]
       cart[item[0]][:count] -= item[2]
+      puts cart
       if cart[item[0]][:count] < 1
         cart.delete([item[0]])
       end
@@ -54,7 +55,7 @@ def checkout(cart, coupons)
   cart2 = consolidate_cart(cart)
   # puts cart2
   cart3 = apply_coupons(cart2, coupons)
-  puts cart3
+  # puts cart3
   cart4 = apply_clearance(cart3)
   # puts cart4
 
