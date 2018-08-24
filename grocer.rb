@@ -39,6 +39,7 @@ def apply_coupons(cart, coupons)
 end
 
 def apply_clearance(cart)
+  puts cart
   cart.each do |item, info_hash|
     puts info_hash
     if info_hash[:clearance] == "true"
