@@ -62,9 +62,9 @@ def checkout(cart, coupons)
     total += info[:price]
   end
 
-  # if total > 100
-  #   (total/10) * 9
-  # end
+  if total > 100
+    (total/10) * 9
+  end
 
   total
 end
