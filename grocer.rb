@@ -19,6 +19,8 @@ def apply_coupons(cart, coupons)
     coupon_item << [hash[:item], hash[:cost], hash[:num]]
   end
 
+  puts coupon_item
+
   coupon_item.each do |item|
     unless cart.include?(item[0])
       coupon_item.delete(item)
