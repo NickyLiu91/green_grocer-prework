@@ -66,6 +66,6 @@ def checkout(cart, coupons)
     return total * 0.9
   end
   puts cart4
-  puts coupon
+  puts coupons
   total
 end
