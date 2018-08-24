@@ -40,7 +40,7 @@ end
 def apply_clearance(cart)
   cart.each do |item, info_hash|
     if info_hash[:clearance]
-      info_hash[:price] = info_hash[:price]/5 * 4
+      info_hash[:price] = (info_hash[:price]/5) * 4
     end
   end
   cart
