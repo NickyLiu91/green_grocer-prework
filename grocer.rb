@@ -35,6 +35,7 @@ def apply_coupons(cart, coupons)
       cart["#{item[0]} W/COUPON"][:count] += 1
   end
 
+  cart.delete_if {|item, info| info[:count] < 1 }
   cart
 end
 
