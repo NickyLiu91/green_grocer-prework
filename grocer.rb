@@ -32,9 +32,7 @@ def apply_coupons(cart, coupons)
       cart["#{item[0]} W/COUPON"][:price] = item[1]
       cart[item[0]][:count] -= item[2]
       puts cart
-      if cart[item[0]][:count] < 1
-        cart.delete([item[0]])
-      end
+      cart.delete_if {|key, value| value[:count] < 1 } 
       puts cart
       cart["#{item[0]} W/COUPON"][:count] ||= 0
       cart["#{item[0]} W/COUPON"][:count] += 1
