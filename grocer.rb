@@ -55,6 +55,7 @@ def checkout(cart, coupons)
   cart4 = apply_clearance(cart3)
   # puts cart4
 
+  cart4.delete_if {|item, info| info[:count] < 1 }
   total = 0
   cart4.each do |item, info|
     total += info[:price]
