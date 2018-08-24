@@ -27,7 +27,6 @@ def apply_coupons(cart, coupons)
 
   coupon_item.each do |item|
     cart["#{item[0]} W/COUPON"] ||= {}
-      puts cart.keys
       cart["#{item[0]} W/COUPON"][:clearance] = cart[item[0]][:clearance]
       cart["#{item[0]} W/COUPON"][:price] = item[1]
       cart[item[0]][:count] -= item[2]
