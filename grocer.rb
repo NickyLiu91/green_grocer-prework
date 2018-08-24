@@ -27,7 +27,7 @@ def apply_coupons(cart, coupons)
   end
 
   coupon_item.each do |item|
-    unless item[2] > art[item[0]][:count]
+    unless item[2] > cart[item[0]][:count]
       cart["#{item[0]} W/COUPON"] ||= {}
       cart["#{item[0]} W/COUPON"][:clearance] = cart[item[0]][:clearance]
       cart["#{item[0]} W/COUPON"][:price] = item[1]
